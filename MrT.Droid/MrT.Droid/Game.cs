@@ -21,6 +21,7 @@ namespace MrT.Droid
             _graphics.PreferredBackBufferWidth = 800;
             _graphics.PreferredBackBufferHeight = 480;
             _graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+
         }
 
         /// <summary>
@@ -72,6 +73,9 @@ namespace MrT.Droid
             base.Update(gameTime);
         }
 
+
+        
+
         /// <summary>
         ///     This is called when the game should draw itself.
         /// </summary>
@@ -80,10 +84,7 @@ namespace MrT.Droid
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
 
-
-            _spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
