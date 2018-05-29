@@ -7,6 +7,12 @@ namespace MrT.Droid
     {
         private Rectangle _hitbox;
 
+        public Rectangle Hitbox
+        {
+            get => _hitbox;
+            set => _hitbox = value;
+        }
+
         public int X
         {
             get => _hitbox.X;
@@ -22,7 +28,7 @@ namespace MrT.Droid
         public int Width
         {
             get => _hitbox.Width;
-            set => _hitbox.Height = value;
+            set => _hitbox.Width = value;
         }
 
         public int Height
@@ -41,7 +47,7 @@ namespace MrT.Droid
             return _hitbox.Intersects(rect);
         }
 
-        protected abstract void Update(GameTime gameTime);
-        protected abstract void Draw(SpriteBatch spriteBatch);
+        public abstract void Update(GameTime gameTime);
+        public abstract void Draw(SpriteBatch spriteBatch);
     }
 }

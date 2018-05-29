@@ -11,6 +11,7 @@ namespace MrT.Droid
     {
         private SpriteBatch _spriteBatch;
         private readonly GraphicsDeviceManager _graphics;
+        private Player _player;
 
         public Game()
         {
@@ -33,7 +34,7 @@ namespace MrT.Droid
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _player = new Player(GraphicsDevice, Content, 20, 20);
             base.Initialize();
         }
 
@@ -69,6 +70,7 @@ namespace MrT.Droid
                 Exit();
 
             // TODO: Add your update logic here
+            _player.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -84,8 +86,10 @@ namespace MrT.Droid
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-
+            _spriteBatch.Begin();
             // TODO: Add your drawing code here
+            _player.Draw(_spriteBatch);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }

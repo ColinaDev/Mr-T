@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace MrT.Droid
@@ -7,27 +8,36 @@ namespace MrT.Droid
     {
 
         private Texture2D _texture;
+        private Vector2 _position;
 
 
-        public Player(GraphicsDevice graphicsDevice, int x, int y)
+        public Player(GraphicsDevice graphicsDevice, ContentManager content, int x, int y)
         {
             X = x;
             Y = y;
-            Width = 30;
-            Height = 30;
-            _texture = new Texture2D(graphicsDevice, Width, Height);
-        }
+            _position = new Vector2(X, Y);
+            Width = 60;
+            Height =60;
 
-
-
-        protected override void Update(GameTime gameTime)
-        {
+            _texture = content.Load<Texture2D>("standing");
             
+
+
         }
 
-        protected override void Draw(SpriteBatch spriteBatch)
+
+
+        public override void Update(GameTime gameTime)
         {
 
+
+            _position.X = X;
+            _position.Y = Y;
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(_texture, Hitbox, null, Color.White);
         }
     }
 }
