@@ -13,7 +13,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
+<<<<<<< HEAD
 #begin walking1.png
+=======
+#begin standing.png
+>>>>>>> 255ad1fb2b8bf3fb7524d7f71641f55024e6da55
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,5 +27,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:walking1.png
+=======
+/build:standing.png
+>>>>>>> 255ad1fb2b8bf3fb7524d7f71641f55024e6da55
 
