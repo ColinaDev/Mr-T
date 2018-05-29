@@ -41,7 +41,7 @@ namespace MrT.Droid
             return _hitbox.Intersects(rect);
         }
 
-        protected abstract void Update(GameTime gameTime);
-        protected abstract void Draw(SpriteBatch spriteBatch);
+        public abstract void Update(GameTime gameTime);
+        public abstract void Draw(SpriteBatch spriteBatch);
     }
 }

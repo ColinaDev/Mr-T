@@ -12,6 +12,8 @@ namespace MrT.Droid
         private SpriteBatch _spriteBatch;
         private readonly GraphicsDeviceManager _graphics;
 
+        private Player _player;
+
         public Game()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -33,7 +35,7 @@ namespace MrT.Droid
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _player = new Player(GraphicsDevice, 50, 50);
             base.Initialize();
         }
 
@@ -45,6 +47,9 @@ namespace MrT.Droid
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            _player.LoadContent(Content);
+
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -68,6 +73,7 @@ namespace MrT.Droid
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 Exit();
 
+            _player.Update(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -84,7 +90,11 @@ namespace MrT.Droid
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            _spriteBatch.Begin();
 
+            _player.Draw(_spriteBatch);
+
+            _spriteBatch.End();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
